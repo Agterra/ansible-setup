@@ -1,0 +1,9 @@
+FROM fedora:latest
+
+COPY . .
+
+RUN dnf update -y \
+  && dnf install -y make
+
+RUN make setup_fedora
+

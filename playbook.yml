@@ -1,0 +1,20 @@
+---
+- name: Configuring Linux
+  hosts: localhost
+  connection: local
+  become: true
+  vars:
+    user: '{{ user }}'
+    target: '{{ target }}'
+  tasks:
+  - name: Setup fedora
+    include_role:
+      name: fedora
+    when: target == 'fedora' 
+  - name: Setup debian
+    include_role:
+      name: debian
+    when: target == 'debian'
+  - name: Setup dotfiles
+    include_role:
+      name: dotfiles

@@ -1,0 +1,11 @@
+FROM ubuntu:latest
+
+ENV DEBIAN_FRONTEND noninteractive
+
+COPY . .
+
+RUN apt update \
+  && apt install -y build-essential
+
+RUN make setup_debian
+

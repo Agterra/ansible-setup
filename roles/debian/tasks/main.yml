@@ -1,0 +1,18 @@
+---
+- name: "Add missing ppa"
+  ansible.builtin.apt_repository:
+    repo: ppa:agornostal/ulauncher
+    state: present
+- name: "Setup Debian"
+  ansible.builtin.apt:
+    name: "*"
+    state: latest
+- name: "Install environment"
+  ansible.builtin.apt:
+    name:
+      - dunst
+      - i3
+      - polybar
+      - picom
+      - ulauncher
+      - zsh

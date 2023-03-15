@@ -1,0 +1,14 @@
+---
+- name: "Setup Fedora"
+  ansible.builtin.dnf:
+    name: "*"
+    state: latest
+- name: "Install environment"
+  ansible.builtin.dnf:
+    name:
+      - dunst
+      - i3
+      - polybar
+      - picom
+      - ulauncher
+      - zsh
