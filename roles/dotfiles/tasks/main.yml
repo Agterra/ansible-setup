@@ -2,15 +2,19 @@
 - name: "Clone dotfiles"
   ansible.builtin.git:
     repo: 'https://github.com/Agterra/dotfiles.git'
-    dest: "/home/{{ user }}/dotfiles"
+    dest: "{{ home }}/dotfiles"
 - name: "Install dotfiles fedora"
   shell:
-    echo "{{ user }}" && \
-    cd "/home/{{ user }}/dotfiles" \
+    cd "{{ home }}/dotfiles" \
       && make setup
   when: target == 'fedora'
 - name: "Install dotfile debian"
   shell:
-    cd "/home/{{ user }}/dotfiles" \
+    cd "{{ home }}/dotfiles" \
       && make setup
   when: target == 'debian'
+- name: "Install Astro NVIM"
+  ansible.builtin.git:
+    repo: 'https://github.com/AstroNvim/AstroNvim'
+    dest: "{{ home }}/.config/nvim"
+    depth: 1

@@ -3,14 +3,14 @@ setup_fedora:
 	sudo dnf install -y ansible git
 
 ansible_fedora:
-	ansible-playbook ./playbook.yml --extra-vars "target=fedora user=$(USER)" -K
+	ansible-playbook ./playbook.yml --extra-vars "target=fedora home=$(HOME)" -K
 
 setup_debian:
 	sudo apt update
 	sudo apt install -y ansible git
 
 ansible_debian:
-	ansible-playbook ./playbook.yml --extra-vars "target=debian user=$(USER)" -K
+	ansible-playbook ./playbook.yml --extra-vars "target=debian home=$(HOME)" -K
 
 test_fedora:
 	docker build -t test_install_fedora -f Dockerfile.fedora .
