@@ -7,4 +7,3 @@ This project aims to quickly setup a new working environment, installing depende
 - Ulauncher
 - Neovim
 - 1Password
-

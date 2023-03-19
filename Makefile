@@ -1,11 +1,15 @@
 setup_fedora:
 	sudo dnf update
 	sudo dnf install -y ansible git
+
+ansible_fedora:
 	ansible-playbook ./playbook.yml --extra-vars "target=fedora user=$(USER)" -K
 
 setup_debian:
 	sudo apt update
 	sudo apt install -y ansible git
+
+ansible_debian:
 	ansible-playbook ./playbook.yml --extra-vars "target=debian user=$(USER)" -K
 
 test_fedora:

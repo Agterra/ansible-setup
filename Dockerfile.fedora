@@ -3,7 +3,6 @@ FROM fedora:latest
 COPY . .
 
 RUN dnf update -y \
-  && dnf install -y make
+  && dnf install -y make ansible git
 
-RUN make setup_fedora
-
+RUN make ansible_fedora

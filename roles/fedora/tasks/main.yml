@@ -12,3 +12,6 @@
       - picom
       - ulauncher
       - zsh
+      - vim
+      - neovim
+      - python3-neovim

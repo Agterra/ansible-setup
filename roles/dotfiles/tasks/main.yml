@@ -7,12 +7,10 @@
   shell:
     echo "{{ user }}" && \
     cd "/home/{{ user }}/dotfiles" \
-      && make install_fedora \
       && make setup
   when: target == 'fedora'
 - name: "Install dotfile debian"
   shell:
     cd "/home/{{ user }}/dotfiles" \
-      && make install_debian \
       && make setup
   when: target == 'debian'
