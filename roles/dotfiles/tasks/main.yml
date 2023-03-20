@@ -21,7 +21,5 @@
 - name: "Install oh-my-zsh"
   shell: sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 - name: "Install powerlevel10k theme"
-  ansible.builtin.git:
-    repo: 'https://github.com/romkatv/powerlevel10k.git'
-    dest: "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
-    depth: 1
+  shell: git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+
