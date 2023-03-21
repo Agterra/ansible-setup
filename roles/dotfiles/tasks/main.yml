@@ -18,8 +18,3 @@
     repo: 'https://github.com/AstroNvim/AstroNvim'
     dest: "{{ home }}/.config/nvim"
     depth: 1
-- name: "Install oh-my-zsh"
-  shell: sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-- name: "Install powerlevel10k theme"
-  shell: git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-
